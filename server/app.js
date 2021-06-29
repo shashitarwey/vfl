@@ -20,6 +20,10 @@ app.use( '/product', productRouter );
 
 const PORT = process.env.PORT || 3000;
 
+if( process.env.NODE_ENV === "production") {
+    app.use( express.static( "vfl/dist" ) );
+}
+
 app.listen( PORT, err => {
     if( err ) {
         console.error( err.message )

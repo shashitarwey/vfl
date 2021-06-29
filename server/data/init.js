@@ -3,13 +3,18 @@ const mongoose = require( 'mongoose' );
 require( '../models/User' );
 require( '../models/Product' );
 
-const uri = 'mongodb://localhost:27017/vflDB';
+const uri = 'mongodb+srv://shashitarwey:Shashi@9122@cluster0.sp6kc.mongodb.net/vfldb?retryWrites=true&w=majority';
 
-mongoose.set( 'useFindAndModify', false );
-mongoose.set( 'returnOriginal', false );
-mongoose.set( 'useCreateIndex', true);
-
-mongoose.connect( uri, { useNewUrlParser: true, useUnifiedTopology: true } );
+mongoose.connect( uri, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    useCreateIndex: true, 
+    useFindAndModify: false 
+    })
+    .then( () => {
+    console.log( 'Connection Successful' )
+    })
+    .catch( (err) => console.log( err ) );
 
 mongoose.connection.on( 'open', () => {
     console.log( 'connection to DB has been established' );
