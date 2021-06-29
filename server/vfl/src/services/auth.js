@@ -3,7 +3,7 @@ import { successHandler, errorHandler } from './helper'
 
 export const login =( credentials ) =>{
 
-   return axios.post( `http://localhost:3000/auth/login`, credentials, 
+   return axios.post( `https://vfl-fynd-app.herokuapp.com//auth/login`, credentials, 
         {
             headers: {
                 'Content-Type' : 'application/json'
@@ -15,7 +15,7 @@ export const login =( credentials ) =>{
 };
 
 export const fetchUser = ( credentials ) => {
-    return axios.post( `http://localhost:3000/auth/register`, credentials,
+    return axios.post( `https://vfl-fynd-app.herokuapp.com/register`, credentials,
     {
         headers: {
             'Content-Type' : 'application/json'
