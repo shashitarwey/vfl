@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "NPM_CONFIG+PRODUCTION=false npm install --prefix vfl && npm run dist --prefix vfl"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix vfl && npm run build --prefix vfl"
   },
   "keywords": [],
   "author": "",
