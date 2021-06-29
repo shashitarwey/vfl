@@ -3,7 +3,7 @@ import { successHandler, errorHandler } from './helper';
 
 export const postProduct =( productDetails ) =>{
 
-    return axios.post( `https://vfl-fynd-app.herokuapp.com/product`, productDetails, 
+    return axios.post( `/product`, productDetails, 
          {
              headers: {
                  'Content-Type' : 'application/json'
@@ -16,7 +16,7 @@ export const postProduct =( productDetails ) =>{
  };
  export const getProduct =( ) =>{
 
-    return axios.get( `https://vfl-fynd-app.herokuapp.com/product`, 
+    return axios.get( `/product`, 
          {
              headers: {
                  'Content-Type' : 'application/json',
@@ -29,7 +29,7 @@ export const postProduct =( productDetails ) =>{
  };
  export const getProductbyId =( id ) =>{
 
-    return axios.get( `https://vfl-fynd-app.herokuapp.com/product/${id}`, 
+    return axios.get( `/product/${id}`, 
          {
              headers: {
                  'Content-Type' : 'application/json'
@@ -42,7 +42,7 @@ export const postProduct =( productDetails ) =>{
  };
  export const removeProductbyId =( id ) =>{
 
-    return axios.delete( `https://vfl-fynd-app.herokuapp.com/product/${id}`, 
+    return axios.delete( `/product/${id}`, 
          {
              headers: {
                  'Content-Type' : 'application/json'
@@ -55,7 +55,7 @@ export const postProduct =( productDetails ) =>{
 
  export const updateProduct =( productDetails,id ) =>{
 
-    return axios.delete( `https://vfl-fynd-app.herokuapp.com/product/${id}`,productDetails, 
+    return axios.delete( `/product/${id}`,productDetails, 
          {
              headers: {
                  'Content-Type' : 'application/json'
