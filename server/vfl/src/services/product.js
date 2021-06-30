@@ -9,7 +9,8 @@ export const postProduct =( productDetails ) =>{
                  'Content-Type' : 'application/json',
                  'Authorization': `${localStorage.getItem( 'token' )}`
              }
-         },
+         }, 
+         { withCredentials: true }
      )
      .then( successHandler )
      .catch( errorHandler );
@@ -36,7 +37,8 @@ export const postProduct =( productDetails ) =>{
                  'Content-Type' : 'application/json',
                  'Authorization': `${localStorage.getItem( 'token' )}`
              }
-         }
+         },
+         { withCredentials: true }
      )
      .then( successHandler )
      .catch( errorHandler );
