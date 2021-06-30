@@ -4,7 +4,7 @@
             <h2>Add Product</h2>
         </div>
         <div class="wrapper">
-            <form method="POST" enctype="multipart/form-data" @submit.prevent="upload">
+            <form method="POST" @submit.prevent="upload">
                 <label for="name">Name <span class="isrequired">*</span></label>
                 <input 
                     type="text" 
