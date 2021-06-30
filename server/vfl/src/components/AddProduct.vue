@@ -4,7 +4,7 @@
             <h2>Add Product</h2>
         </div>
         <div class="wrapper">
-            <form method="POST" @submit.prevent="upload">
+            <form method="POST" enctype="multipart/form-data" @submit.prevent="upload">
                 <label for="name">Name <span class="isrequired">*</span></label>
                 <input 
                     type="text" 
@@ -56,6 +56,14 @@
                     <small class="text-danger mb-2">Quantity is required</small>
                 </div>
                 </div>
+                <label for="file">Product Image</label>
+                 <input 
+                    type="file" 
+                    name="file"
+                >
+                <div>
+                    <small><span class="isrequired">*</span> marked fields are required</small>
+                </div>
                 <div>
                     <button class="btn btn-primary w-100 my-2">Upload</button>
                 </div>
@@ -76,6 +84,7 @@ export default {
                 name:'',
                 price:0,
                 quantity:0,
+                //imageUrl:''
             }
         }
     },
@@ -103,7 +112,7 @@ export default {
             this.$v.form.$touch();
             if ( !this.$v.form.$invalid )
             {
-            postProduct({ name: this.form.name, price: this.form.price, quantity: this.form.quantity })
+            postProduct({ name: this.form.name, price: this.form.price, quantity: this.form.quantity/*imageUrl: this.form.imageUrl*/ })
                 .then( () => {
                     Vue.$toast.success( 
                         'Product Added Succesfully',
