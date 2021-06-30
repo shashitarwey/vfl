@@ -55,7 +55,7 @@
                 <div v-if = "!$v.form.quantity.required">
                     <small class="text-danger mb-2">Quantity is required</small>
                 </div>
-                 <div>
+                <div>
                     <button class="btn btn-primary w-100 my-2">Upload</button>
                 </div>
                 </div>
