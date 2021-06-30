@@ -6,10 +6,10 @@ export const postProduct =( productDetails ) =>{
     return axios.post( `/product`, productDetails, 
          {
              headers: {
-                 'Content-Type' : 'application/json'
+                 'Content-Type' : 'application/json',
+                 'Authorization': `${localStorage.getItem( 'token' )}`
              }
          },
-         { withCredentials: true }
      )
      .then( successHandler )
      .catch( errorHandler );
@@ -20,6 +20,7 @@ export const postProduct =( productDetails ) =>{
          {
              headers: {
                  'Content-Type' : 'application/json',
+                 'Authorization': `${localStorage.getItem( 'token' )}`
                  
              }
          }
@@ -32,10 +33,10 @@ export const postProduct =( productDetails ) =>{
     return axios.get( `/product/${id}`, 
          {
              headers: {
-                 'Content-Type' : 'application/json'
+                 'Content-Type' : 'application/json',
+                 'Authorization': `${localStorage.getItem( 'token' )}`
              }
-         },
-             { withCredentials: true }
+         }
      )
      .then( successHandler )
      .catch( errorHandler );
@@ -45,7 +46,8 @@ export const postProduct =( productDetails ) =>{
     return axios.delete( `/product/${id}`, 
          {
              headers: {
-                 'Content-Type' : 'application/json'
+                 'Content-Type' : 'application/json',
+                 'Authorization': `${localStorage.getItem( 'token' )}`
              }
          }
      )
@@ -58,7 +60,8 @@ export const postProduct =( productDetails ) =>{
     return axios.delete( `/product/${id}`,productDetails, 
          {
              headers: {
-                 'Content-Type' : 'application/json'
+                 'Content-Type' : 'application/json',
+                 'Authorization': `${localStorage.getItem( 'token' )}`
              }
          }
      )

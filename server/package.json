@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix vfl && npm run build --prefix vfl"
   },
@@ -13,9 +13,12 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
     "http": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.14",

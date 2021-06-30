@@ -56,17 +56,6 @@
                     <small class="text-danger mb-2">Quantity is required</small>
                 </div>
                 </div>
-                <label for="file">Product Image</label>
-                 <input 
-                    type="file" 
-                    name="file"
-                >
-                <div>
-                    <small><span class="isrequired">*</span> marked fields are required</small>
-                </div>
-                <div>
-                    <button class="btn btn-primary w-100 my-2">Upload</button>
-                </div>
             </form>
         </div>
     </div>
@@ -84,7 +73,6 @@ export default {
                 name:'',
                 price:0,
                 quantity:0,
-                //imageUrl:''
             }
         }
     },
@@ -112,7 +100,7 @@ export default {
             this.$v.form.$touch();
             if ( !this.$v.form.$invalid )
             {
-            postProduct({ name: this.form.name, price: this.form.price, quantity: this.form.quantity/*imageUrl: this.form.imageUrl*/ })
+            postProduct({ name: this.form.name, price: this.form.price, quantity: this.form.quantity })
                 .then( () => {
                     Vue.$toast.success( 
                         'Product Added Succesfully',
